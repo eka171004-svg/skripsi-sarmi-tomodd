@@ -8,7 +8,7 @@ Logbook dan kode skripsi relokasi gempa Sarmi
 ---
 
 ## Day 1: Setup Environment & GitHub
-**Tanggal:** [Isi tanggal hari ini, misal: 24 Oktober 2026]
+**Tanggal:** 24 Oktober 2026
 
 ### Progress Hari Ini:
 - [x] **Install Python:** Menggunakan Python Install Manager resmi. Mengaktifkan *Long Path Support* (fitur wajib untuk Windows agar tidak error saat path folder terlalu panjang).
@@ -28,7 +28,7 @@ Sebelum masuk ke *software* TomoDD (yang berbasis CLI/Linux), data mentah dari B
 ---
 
 ## Day 2: Data Conditioning & Berhasil Compile ph2dt
-**Tanggal:** [Isi tanggal hari ini, misal: 25 Oktober 2026]
+**Tanggal:** 25 Oktober 2026
 
 ### Progress Hari Ini:
 - [x] **Setup WSL & Ubuntu:** Mengaktifkan *Windows Subsystem for Linux* (WSL) untuk menjalankan *software* berbasis Linux (TomoDD).
