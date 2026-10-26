@@ -24,3 +24,27 @@ Sebelum masuk ke *software* TomoDD (yang berbasis CLI/Linux), data mentah dari B
 
 ### Next Step:
 - Membuat *script* Python (`cleaning.py`) untuk memfilter data `phase data.txt` khusus periode September 2022.
+
+---
+
+## Day 2: Data Conditioning & Berhasil Compile ph2dt
+**Tanggal:** [Isi tanggal hari ini, misal: 25 Oktober 2026]
+
+### Progress Hari Ini:
+- [x] **Setup WSL & Ubuntu:** Mengaktifkan *Windows Subsystem for Linux* (WSL) untuk menjalankan *software* berbasis Linux (TomoDD).
+- [x] **Instalasi Dependensi:** Menginstal `gfortran`, `make`, dan *library* pendukung (`libgfortran3`) untuk *compile* kode Fortran kuno.
+- [x] **Beresin File Sampah:** Menghapus file *trial and error* dan merapikan struktur folder kerja.
+- [x] **Filter Data Fase:** Membuat script `cleaning.py` (Python) untuk memfilter event gempa **khusus periode September 2022** (38 event).
+- [x] **Format Data TomoDD:** Membuat script `buat_data_tomodd_final.py` untuk mengubah format BMKG ke format `ph2dt` (Stasiun, TravelTime, Weight, Phase, EventID).
+- [x] **Konfigurasi Model 1D:** Membuat file `model.dat` (kecepatan Vp & Vs) standar kerak bumi.
+- [x] **Kompilasi `ph2dt`:** Mengubah parameter memori di `ph2dt.inc` (`MOBS=15000`) dan menambahkan flag `-mcmodel=large` di `Makefile` agar *compile* berhasil di sistem 64-bit.
+- [x] **Menjalankan `ph2dt`:** Berhasil menjalankan program `ph2dtN3` dan menghasilkan output **`dt.ct`** dan **`absolute.dat`** (data *differential times*).
+
+### Kendala & Solusi:
+- **Kendala:** *Software* `ph2dt` gagal *compile* karena masalah memori (*relocation truncated*).
+- **Solusi:** Mengubah `Makefile` dengan menambahkan `FC = gfortran -mcmodel=large` dan mengubah parameter memori di `ph2dt.inc`.
+
+### Next Step:
+- Mengatur parameter inversi di `tomoDD-SE.inp`.
+- Memindahkan file input (`dt.ct`, `event.dat`, `station.dat`, `model.dat`) ke folder `Input_Files`.
+- Menjalankan **Inversi Tomografi** menggunakan `tomoDD-SE`.
